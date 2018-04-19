@@ -61,11 +61,11 @@ Feature: Choose javascript database strategy
       end
 
       Then /should have (\d) widgets/ do |num|
-        Widget.count.should == num.to_i
+        expect(Widget.count).to eq(num.to_i)
       end
 
      Then /^the DatabaseCleaner strategy should be (\w+)$/ do |strategy_name|
-        DatabaseCleaner.connections.first.strategy.to_s.should =~ /#{strategy_name}/i
+        expect(DatabaseCleaner.connections.first.strategy.to_s).to match(/#{strategy_name}/i)
       end
       """
     When I run the cukes
@@ -101,7 +101,7 @@ Feature: Choose javascript database strategy
       end
 
       Then /should have (\d) widgets/ do |num|
-        Widget.count.should == num.to_i
+        expect(Widget.count).to eq(num.to_i)
       end
       """
     When I run the cukes
@@ -134,7 +134,7 @@ Feature: Choose javascript database strategy
       end
 
       Then /should have (\d) widgets/ do |num|
-        Widget.count.should == num.to_i
+        expect(Widget.count).to eq(num.to_i)
       end
       """
     When I run the cukes

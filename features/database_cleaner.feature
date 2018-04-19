@@ -32,7 +32,7 @@ Feature: DatabaseCleaner
       end
 
       Then /^I should have (\d+) widgets$/ do |n|
-        Widget.count.should == n.to_i
+        expect(Widget.count).to eq(n.to_i)
       end
       """
     And I run `bundle exec rake db:migrate`

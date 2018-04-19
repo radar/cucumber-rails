@@ -35,7 +35,7 @@ Feature: REST API
       end
 
       Then /^the response should be JSON:$/ do |json|
-        JSON.parse(last_response.body).should == JSON.parse(json)
+        expect(JSON.parse(last_response.body)).to eq(JSON.parse(json))
       end
       """
     And I run `bundle exec rake db:migrate`
