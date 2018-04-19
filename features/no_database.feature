@@ -34,6 +34,7 @@ Feature: No Database
       gem "cucumber-rails", group: :test, path: "../../.."
       gem "capybara", group: :test
       gem "rspec-rails", group: :test
+      gem "bootsnap", require: false
       if RUBY_VERSION >= '2.0.0'
         gem 'sass-rails'
         gem 'uglifier'
